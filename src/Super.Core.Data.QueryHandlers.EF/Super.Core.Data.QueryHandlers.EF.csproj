@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mediatr" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Super.Core.Data.EF\Super.Core.Data.EF.csproj" />
+    <ProjectReference Include="..\Super.Core.Queries\Super.Core.Queries.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.6.2" />
+    <PackageReference Include="Mediatr" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Super.Core.CommandHandlers\Super.Core.CommandHandlers.csproj" />
+    <ProjectReference Include="..\Super.Core.Commands\Super.Core.Commands.csproj" />
+    <ProjectReference Include="..\Super.Core.Data.EF\Super.Core.Data.EF.csproj" />
+    <ProjectReference Include="..\Super.Core.Data.QueryHandlers.EF\Super.Core.Data.QueryHandlers.EF.csproj" />
+    <ProjectReference Include="..\Super.Core.Data\Super.Core.Data.csproj" />
+    <ProjectReference Include="..\Super.Core.DTO\Super.Core.DTO.csproj" />
+    <ProjectReference Include="..\Super.Core.Entities\Super.Core.Entities.csproj" />
+    <ProjectReference Include="..\Super.Core.Queries\Super.Core.Queries.csproj" />
+    <ProjectReference Include="..\Super.Core\Super.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Extensions.DependencyModel">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.dependencymodel\2.0.3\lib\netstandard1.6\Microsoft.Extensions.DependencyModel.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
