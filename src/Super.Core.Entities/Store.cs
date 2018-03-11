@@ -6,6 +6,11 @@ namespace Super.Core.Entities
 {
     public class Store
     {
+        private Store()
+        {
+
+        }
+
         public Store(Guid id, Guid storeChainId, string name, decimal latitude, decimal longitude, string address)
         {
             Id = id;
@@ -25,6 +30,14 @@ namespace Super.Core.Entities
         public decimal Latitude { get; private set; }
 
         public decimal Longitude { get; private set; }
+
+        public void Update(string name, decimal latitude, decimal longitude, string address)
+        {
+            Name = name;
+            Latitude = latitude;
+            Longitude = longitude;
+            Address = address;
+        }
 
         public string Address { get; private set; }
     }

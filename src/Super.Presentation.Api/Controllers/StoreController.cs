@@ -46,5 +46,16 @@ namespace Super.Presentation.Api.Controllers
 
             return Ok(id);
         }
+
+        [HttpPut]
+        public async Task<IActionResult> Put(PutParams putParams)
+        {
+            await mediator.Send(
+                new StoreUpdateCommand(
+                    putParams.Id, putParams.Name,
+                    putParams.Latitude, putParams.Longitude, putParams.Address));
+
+            return Ok();
+        }
     }
 }
