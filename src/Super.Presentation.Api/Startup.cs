@@ -29,6 +29,7 @@ namespace Super.Presentation.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddCors();
             services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SuperDatabase")));
             services.AddSwaggerGen(opt =>
             {
@@ -50,6 +51,7 @@ namespace Super.Presentation.Api
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(builder => builder.AllowAnyOrigin());
             app.UseMvc();
             app.UseSwagger();
 
