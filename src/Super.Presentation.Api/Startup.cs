@@ -44,24 +44,29 @@ namespace Super.Presentation.Api
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(
+            IApplicationBuilder app, 
+            IHostingEnvironment env,
+            DataContext context)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
+            context.Database.Migrate();
+
             app.UseCors(builder => builder.AllowAnyOrigin());
             app.UseMvc();
             app.UseSwagger();
 
-            if (env.IsDevelopment())
+            app.UseSwaggerUI(c =>
             {
-                app.UseSwaggerUI(c =>
-                {
-                    c.SwaggerEndpoint("/swagger/doc/swagger.json", "DataService API");
-                });
-            }
+                c.SwaggerEndpoint("/swagger/doc/swagger.json", "DataService API");
+            });
+            //if (env.IsDevelopment())
+            //{
+            //}
         }
     }
 }

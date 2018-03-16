@@ -2,5 +2,6 @@
 bin
 obj
 .vs
-/src/SIPI.Presentation.Website/Web.ConnectionStrings.config
+/src/Super.Presentation.Api/appsettings.Production.json
 *.user
+PublishProfiles
