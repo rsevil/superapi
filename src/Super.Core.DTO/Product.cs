@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Super.Core.Entities
+namespace Super.Core.DTO
 {
     public class Product
     {
@@ -13,10 +13,11 @@ namespace Super.Core.Entities
             PhotoUrl = photoUrl;
         }
 
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
         public string Name { get; private set; }
 
         public string PhotoUrl { get; private set; }
     }
 }
+

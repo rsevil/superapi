@@ -64,9 +64,6 @@ namespace Super.Presentation.Api
             {
                 c.SwaggerEndpoint("/swagger/doc/swagger.json", "DataService API");
             });
-            //if (env.IsDevelopment())
-            //{
-            //}
         }
     }
 }

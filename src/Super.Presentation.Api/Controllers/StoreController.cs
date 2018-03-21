@@ -4,8 +4,6 @@ using Super.Core.Commands;
 using Super.Core.Queries;
 using Super.Presentation.Api.Models.Store;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Super.Presentation.Api.Controllers
