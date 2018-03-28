@@ -20,16 +20,16 @@ namespace Super.Presentation.Api.Controllers
             this.mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Post([FromBody]PostParams postParams)
-        {
-            var id = Guid.NewGuid();
+        //[HttpPost]
+        //public async Task<IActionResult> Post([FromBody]PostParams postParams)
+        //{
+        //    var id = Guid.NewGuid();
 
-            await mediator.Send(
-                new ProductCreateCommand(id, postParams.Name, postParams.PhotoUrl));
+        //    await mediator.Send(
+        //        new ProductCreateCommand(id, postParams.Name, postParams.PhotoUrl));
 
-            return Ok(id);
-        }
+        //    return Ok(id);
+        //}
 
         [HttpGet]
         public async Task<IActionResult> Get(GetParams getParams)
@@ -39,8 +39,8 @@ namespace Super.Presentation.Api.Controllers
                     new FindProductPagedQuery(getParams.PageParams)));
         }
 
-        [HttpGet(nameof(GetDetail))]
-        public async Task<IActionResult> GetDetail(GetDetailParams getDetailParams)
+        [HttpGet(nameof(Detail))]
+        public async Task<IActionResult> Detail(GetDetailParams getDetailParams)
         {
             return Ok(
                 await mediator.Send(

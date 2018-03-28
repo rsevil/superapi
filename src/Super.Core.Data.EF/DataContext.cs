@@ -26,6 +26,19 @@ namespace Super.Core.Data.EF
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<ProductListProduct>()
+                .HasKey(x => new { x.ProductListId, x.ProductId });
+
+            modelBuilder.Entity<ProductListProduct>()
+                .HasOne<ProductList>()
+                .WithMany(x => x.ProductListProducts)
+                .HasForeignKey(x => x.ProductListId);
+
+            modelBuilder.Entity<ProductListProduct>()
+                .HasOne(x => x.Product)
+                .WithMany()
+                .HasForeignKey(x => x.ProductId);
         }
     }
 }
