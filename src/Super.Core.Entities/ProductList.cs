@@ -6,10 +6,15 @@ namespace Super.Core.Entities
 {
     public class ProductList
     {
-        public ProductList(Guid id, string name, IEnumerable<ProductListProduct> productListProducts)
+        public ProductList(
+            Guid id, 
+            string name, 
+            string userId,
+            IEnumerable<ProductListProduct> productListProducts)
         {
             Id = id;
             Name = name;
+            UserId = userId;
             ProductListProducts = productListProducts;
         }
 

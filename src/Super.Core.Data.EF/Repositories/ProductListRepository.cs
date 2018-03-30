@@ -22,7 +22,7 @@ namespace Super.Core.Data.EF.Repositories
 
         public void AttachProductListProduct(ProductListProduct productListProduct)
         {
-            dataContext.Attach(productListProduct);
+            dataContext.Add(productListProduct);
         }
     }
 }

@@ -30,7 +30,7 @@ namespace Super.Core.CommandHandlers
                 })
                 .ToList();
 
-            var productList = new ProductList(message.Id, message.Name, products);
+            var productList = new ProductList(message.Id, message.Name, message.UserId, products);
 
             productLists.Add(productList);
         }

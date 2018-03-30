@@ -1,9 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Super.Core.Commands;
-using Super.Core.Queries;
-using Super.Presentation.Api.Models.Product;
-//using Super.Presentation.Api.Models.ProductList;
+using Super.Presentation.Api.Models.ProductList;
 using System;
 using System.Threading.Tasks;
 
@@ -20,16 +18,17 @@ namespace Super.Presentation.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody]PostParams postParams)
+        public async Task<IActionResult> Post(
+            [FromBody]ProductListPostParams productListPostParams)
         {
             var id = Guid.NewGuid();
 
             await mediator.Send(
                 new ProductListCreateCommand(
                     id,
-                    postParams.Name,
-                    Guid.NewGuid(),//postParams.UserId,
-                    null//postParams.ProductIds
+                    productListPostParams.Name,
+                    productListPostParams.UserId,
+                    productListPostParams.ProductIds
                 )
             );
 
