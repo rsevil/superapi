@@ -21,12 +21,12 @@ namespace Super.Core.CommandHandlers
 
         public async Task Handle(ProductListCreateCommand message, CancellationToken cancellationToken)
         {
-            var products = message.ProductIds
-                .Select(id =>
+            var products = message.Products
+                .Select(product =>
                 {
-                    var p = new ProductListProduct(message.Id, id);
-                    productLists.AttachProductListProduct(p);
-                    return p;
+                    var item = new ProductListProduct(message.Id, product.Id, product.Quantity);
+                    productLists.AddProductListProduct(item);
+                    return item;
                 })
                 .ToList();
 

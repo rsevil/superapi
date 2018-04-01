@@ -6,6 +6,11 @@ namespace Super.Core.Entities
 {
     public class Product
     {
+        private Product()
+        {
+
+        }
+
         public Product(Guid id, string name, string photoUrl)
         {
             Id = id;

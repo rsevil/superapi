@@ -28,8 +28,8 @@ namespace Super.Presentation.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
             services.AddCors();
+            services.AddMvc();
             services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SuperDatabase")));
             services.AddSwaggerGen(opt =>
             {
@@ -56,7 +56,11 @@ namespace Super.Presentation.Api
 
             context.Database.Migrate();
 
-            app.UseCors(builder => builder.AllowAnyOrigin());
+            app.UseCors(builder => 
+                builder
+                    .AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
             app.UseMvc();
             app.UseSwagger();
 

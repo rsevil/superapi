@@ -4,9 +4,9 @@ using Super.Core.DTO;
 
 namespace Super.Core.Queries
 {
-    public class FindProductPagedQuery : IRequest<IPagedCollection<Product>>
+    public class FindProductListPagedQuery : IRequest<IPagedCollection<ProductList>>
     {
-        public FindProductPagedQuery(IPageParams pageParams)
+        public FindProductListPagedQuery(IPageParams pageParams)
         {
             PageParams = pageParams;
         }

@@ -30,15 +30,26 @@ namespace Super.Core.Data.EF
             modelBuilder.Entity<ProductListProduct>()
                 .HasKey(x => new { x.ProductListId, x.ProductId });
 
-            modelBuilder.Entity<ProductListProduct>()
-                .HasOne<ProductList>()
-                .WithMany(x => x.ProductListProducts)
-                .HasForeignKey(x => x.ProductListId);
+            modelBuilder.Entity<ProductList>()
+                .HasMany(x => x.ProductListProducts)
+                .WithOne()
+                .HasForeignKey(x => x.ProductListId)
+                .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<ProductListProduct>()
-                .HasOne(x => x.Product)
-                .WithMany()
+            //modelBuilder.Entity<ProductListProduct>()
+            //    .HasOne<ProductList>()
+            //    .WithMany(x => x.ProductListProducts)
+            //    .HasForeignKey(x => x.ProductListId);
+
+            modelBuilder.Entity<Product>()
+                .HasMany<ProductListProduct>()
+                .WithOne(x => x.Product)
                 .HasForeignKey(x => x.ProductId);
+
+            //modelBuilder.Entity<ProductListProduct>()
+            //    .HasOne(x => x.Product)
+            //    .WithMany()
+            //    .HasForeignKey(x => x.ProductId);
         }
     }
 }
