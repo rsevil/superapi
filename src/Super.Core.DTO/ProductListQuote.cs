@@ -12,6 +12,10 @@ namespace Super.Core.DTO
 
         public string Address { get; set; }
 
+        public decimal Latitude { get; set; }
+
+        public decimal Longitude { get; set; }
+
         public decimal Score { get; set; }
 
         public decimal Amount { get; set; }

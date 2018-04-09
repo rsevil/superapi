@@ -32,8 +32,10 @@ namespace Super.Core.Data.QueryHandlers.Dapper
 	                SELECT
 		                StoreId = s.Id,
 		                StoreName = s.Name,
-		                Address = s.Address,
-		                Amount = SUM(p.Amount),
+		                s.Address,
+                        s.Latitude, 
+		                s.Longitude,
+		                Amount = SUM(plp.Quantity * p.Amount),
 		                Distance = @Origin.STDistance(Geography::Point(s.Latitude, s.Longitude, 4326))
 	                FROM ProductLists pl
 	                JOIN ProductListProduct plp on plp.ProductListId = pl.Id
