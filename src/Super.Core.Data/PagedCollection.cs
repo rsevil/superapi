@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Super.Core.Data.EF
+namespace Super.Core.Data
 {
     public class PagedCollection<T> : IPagedCollection<T>
     {

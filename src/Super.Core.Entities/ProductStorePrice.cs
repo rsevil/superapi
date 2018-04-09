@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Super.Core.Entities
 {
-    public class ProductPrice
+    public class ProductStorePrice
     {
         public Guid Id { get; private set; }
 
@@ -12,7 +12,7 @@ namespace Super.Core.Entities
 
         public Guid StoreId { get; private set; }
 
-        public decimal Price { get; private set; }
+        public decimal Amount { get; private set; }
 
         public DateTimeOffset ValidFrom { get; private set; }
 

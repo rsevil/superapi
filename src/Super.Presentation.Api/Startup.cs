@@ -39,7 +39,7 @@ namespace Super.Presentation.Api
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
-            builder.RegisterModule(new BootstrapperModule());
+            builder.RegisterModule(new BootstrapperModule(Configuration));
         }
 
 

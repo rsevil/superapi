@@ -54,6 +54,18 @@ namespace Super.Presentation.Api.Controllers
                     new FindProductListByIdQuery(getDetailParams.Id)));
         }
 
+        [HttpGet(nameof(Quote))]
+        public async Task<IActionResult> Quote(GetQuoteParams getQuoteParams)
+        {
+            return Ok(
+                await mediator.Send(
+                    new FindProductListQuoteQuery(
+                        getQuoteParams.ProductListId,
+                        getQuoteParams.Latitude,
+                        getQuoteParams.Longitude,
+                        getQuoteParams.PageParams)));
+        }
+
         [HttpDelete]
         public async Task<IActionResult> Delete(DeleteParams deleteParams)
         {

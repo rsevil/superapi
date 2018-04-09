@@ -13,6 +13,7 @@
     <ProjectReference Include="..\Super.Core.CommandHandlers\Super.Core.CommandHandlers.csproj" />
     <ProjectReference Include="..\Super.Core.Commands\Super.Core.Commands.csproj" />
     <ProjectReference Include="..\Super.Core.Data.EF\Super.Core.Data.EF.csproj" />
+    <ProjectReference Include="..\Super.Core.Data.QueryHandlers.Dapper\Super.Core.Data.QueryHandlers.Dapper.csproj" />
     <ProjectReference Include="..\Super.Core.Data.QueryHandlers.EF\Super.Core.Data.QueryHandlers.EF.csproj" />
     <ProjectReference Include="..\Super.Core.Data\Super.Core.Data.csproj" />
     <ProjectReference Include="..\Super.Core.DTO\Super.Core.DTO.csproj" />

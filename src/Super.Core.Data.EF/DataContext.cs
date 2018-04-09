@@ -17,7 +17,7 @@ namespace Super.Core.Data.EF
 
         public DbSet<ProductList> ProductLists { get; set; }
 
-        public DbSet<ProductPrice> Prices { get; set; }
+        public DbSet<ProductStorePrice> Prices { get; set; }
 
         public DbSet<Store> Stores { get; set; }
 
@@ -50,6 +50,16 @@ namespace Super.Core.Data.EF
             //    .HasOne(x => x.Product)
             //    .WithMany()
             //    .HasForeignKey(x => x.ProductId);
+
+            modelBuilder.Entity<ProductStorePrice>()
+                .HasOne<Product>()
+                .WithMany()
+                .HasForeignKey(x => x.ProductId);
+
+            modelBuilder.Entity<ProductStorePrice>()
+                .HasOne<Store>()
+                .WithMany()
+                .HasForeignKey(x => x.StoreId);
         }
     }
 }
