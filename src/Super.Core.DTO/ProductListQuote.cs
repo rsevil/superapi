@@ -17,5 +17,7 @@ namespace Super.Core.DTO
         public decimal Amount { get; set; }
 
         public decimal Distance { get; set; }
+
+        public string DistanceInKm => (Distance / 1000).ToString("#0.00");
     }
 }

@@ -60,7 +60,7 @@ namespace Super.Presentation.Api.Controllers
             return Ok(
                 await mediator.Send(
                     new FindProductListQuoteQuery(
-                        getQuoteParams.ProductListId,
+                        getQuoteParams.Id,
                         getQuoteParams.Latitude,
                         getQuoteParams.Longitude,
                         getQuoteParams.PageParams)));

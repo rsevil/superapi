@@ -6,7 +6,7 @@ namespace Super.Presentation.Api.Models.ProductList
 {
     public class GetQuoteParams
     {
-        public Guid ProductListId { get; set; }
+        public Guid Id { get; set; }
 
         public decimal Latitude { get; set; }
 
